@@ -1,0 +1,10 @@
+<div class="container mt-4">
+  <h2>Cadastrar Assunto</h2>
+  <form [formGroup]="assuntoForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="descricao" class="form-label">Descrição</label>
+      <input id="descricao" formControlName="descricao" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!assuntoForm.valid">Salvar</button>
+  </form>
+</div> 

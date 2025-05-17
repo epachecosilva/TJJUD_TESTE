@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+    name="relatorioLivros" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="12345678-1234-1234-1234-123456789012">
+
+    <queryString>
+        <![CDATA[SELECT * FROM vw_relatorio_livros]]>
+    </queryString>
+
+    <field name="Autor" class="java.lang.String"/>
+    <field name="Titulo" class="java.lang.String"/>
+    <field name="Editora" class="java.lang.String"/>
+    <field name="Edicao" class="java.lang.Integer"/>
+    <field name="AnoPublicacao" class="java.lang.String"/>
+    <field name="Valor" class="java.math.BigDecimal"/>
+    <field name="Assunto" class="java.lang.String"/>
+
+    <group name="AutorGroup">
+        <groupExpression><![CDATA[$F{Autor}]]></groupExpression>
+        <groupHeader>
+            <band height="30">
+                <textField>
+                    <reportElement x="0" y="0" width="555" height="30" backcolor="#E0E0E0" mode="Opaque"/>
+                    <textElement>
+                        <font size="14" isBold="true"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{Autor}]]></textFieldExpression>
+                </textField>
+            </band>
+        </groupHeader>
+    </group>
+
+    <columnHeader>
+        <band height="20">
+            <staticText><reportElement x="0" y="0" width="150" height="20"/><text><![CDATA[Título]]></text></staticText>
+            <staticText><reportElement x="150" y="0" width="100" height="20"/><text><![CDATA[Editora]]></text></staticText>
+            <staticText><reportElement x="250" y="0" width="50" height="20"/><text><![CDATA[Edição]]></text></staticText>
+            <staticText><reportElement x="300" y="0" width="60" height="20"/><text><![CDATA[Ano]]></text></staticText>
+            <staticText><reportElement x="360" y="0" width="60" height="20"/><text><![CDATA[Valor]]></text></staticText>
+            <staticText><reportElement x="420" y="0" width="135" height="20"/><text><![CDATA[Assunto]]></text></staticText>
+        </band>
+    </columnHeader>
+
+    <detail>
+        <band height="20">
+            <textField><reportElement x="0" y="0" width="150" height="20"/><textFieldExpression><![CDATA[$F{Titulo}]]></textFieldExpression></textField>
+            <textField><reportElement x="150" y="0" width="100" height="20"/><textFieldExpression><![CDATA[$F{Editora}]]></textFieldExpression></textField>
+            <textField><reportElement x="250" y="0" width="50" height="20"/><textFieldExpression><![CDATA[$F{Edicao}]]></textFieldExpression></textField>
+            <textField><reportElement x="300" y="0" width="60" height="20"/><textFieldExpression><![CDATA[$F{AnoPublicacao}]]></textFieldExpression></textField>
+            <textField><reportElement x="360" y="0" width="60" height="20"/><textFieldExpression><![CDATA[$F{Valor}]]></textFieldExpression></textField>
+            <textField><reportElement x="420" y="0" width="135" height="20"/><textFieldExpression><![CDATA[$F{Assunto}]]></textFieldExpression></textField>
+        </band>
+    </detail>
+</jasperReport> 

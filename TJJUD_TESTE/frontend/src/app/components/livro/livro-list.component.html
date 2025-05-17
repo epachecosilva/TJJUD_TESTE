@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <h2>Livros</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Editora</th>
+        <th>Edição</th>
+        <th>Ano</th>
+        <th>Valor (R$)</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let livro of livros">
+        <td>{{ livro.titulo }}</td>
+        <td>{{ livro.editora }}</td>
+        <td>{{ livro.edicao }}</td>
+        <td>{{ livro.anoPublicacao }}</td>
+        <td>{{ livro.valor | currency:'BRL' }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="/* implementar exclusão */">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <a href="http://localhost:8080/api/relatorio" class="btn btn-success" target="_blank">Baixar Relatório PDF</a>
+</div> 

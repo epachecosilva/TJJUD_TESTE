@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <h2>Cadastrar Livro</h2>
+  <form [formGroup]="livroForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="titulo" class="form-label">Título</label>
+      <input id="titulo" formControlName="titulo" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label for="editora" class="form-label">Editora</label>
+      <input id="editora" formControlName="editora" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label for="edicao" class="form-label">Edição</label>
+      <input id="edicao" formControlName="edicao" class="form-control" type="number" />
+    </div>
+    <div class="mb-3">
+      <label for="anoPublicacao" class="form-label">Ano de Publicação</label>
+      <input id="anoPublicacao" formControlName="anoPublicacao" class="form-control" maxlength="4" />
+    </div>
+    <div class="mb-3">
+      <label for="valor" class="form-label">Valor (R$)</label>
+      <input id="valor" formControlName="valor" class="form-control" type="number" required />
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!livroForm.valid">Salvar</button>
+  </form>
+</div> 
